@@ -1,0 +1,23 @@
+{
+  "name": "anivarya",
+  "version": "1.0.0",
+  "description": "Anivarya Website",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/njp16330/anivarya.git"
+  },
+  "author": "Nisarg Patel",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/njp16330/anivarya/issues"
+  },
+  "homepage": "https://github.com/njp16330/anivarya#readme",
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "express": "^4.16.3"
+  }
+}
