@@ -11,6 +11,9 @@
     "type": "git",
     "url": "git+https://github.com/njp16330/anivarya.git"
   },
+  "engines": {
+    "node": "8.11.1"
+  },
   "author": "Nisarg Patel",
   "license": "ISC",
   "bugs": {
