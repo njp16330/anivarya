@@ -10,6 +10,8 @@ app.get('/', function(req, res){
     res.render('index.html');
 });
 
-app.listen(3000, function(){
-    console.log('listening on localhost:3000...');
+var port = process.env.port || 8080;
+
+app.listen(port, function(){
+    console.log('listening on '+port+'...');
 });
