@@ -1,0 +1,8 @@
+language: node_js
+node_js:
+  - "iojs"
+deploy:
+  provider: heroku
+  api_key:
+    secure: "dbebf674-fdf7-4e0b-b4d8-533172c6a74d"
+  app: anivarya
