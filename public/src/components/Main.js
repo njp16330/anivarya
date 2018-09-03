@@ -4,6 +4,8 @@ import Navigation from './Navigation';
 import Body from './Body';
 import Footer from './Footer';
 
+
+
 export default class Main extends React.Component{
     constructor(){
         super();

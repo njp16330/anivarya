@@ -6,7 +6,7 @@ export default class Body extends React.Component{
     }
 
     render (){
-        return <div>
+        return <div className="body">
             Body
         </div>
     }
