@@ -12,11 +12,10 @@ export default class Main extends React.Component{
     }
 
     render (){
-        return <div className="container-fluid">
+        return (<div className="container-fluid">
             <Header></Header>
-            <Navigation></Navigation>
             <Body></Body>
             <Footer></Footer>
-        </div>
+        </div>);
     }
 }
