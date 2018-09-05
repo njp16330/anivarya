@@ -7,7 +7,7 @@ export default class Header extends React.Component{
 
     render (){
         return <div className="header">
-            Welcome to Anivarya Pumps!
+            <img className="logo" src="/img/Anivarya-Pumps-Logo.png" />
         </div>
     }
 }
