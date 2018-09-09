@@ -1,5 +1,6 @@
 import React from 'react';
 import Products from './products/Products';
+import axios from 'axios';
 
 export default class Body extends React.Component{
     constructor(){
@@ -10,10 +11,9 @@ export default class Body extends React.Component{
 
     componentWillMount(){
         var ctxt = this;
-        fetch('/api/get/products').then(function(res){
-            return res.json();
-        }).then(function(data){
-            ctxt.setState({products: data});
+        axios.get('/api/get/products').then(function(res){
+            //console.log(res.data);
+            ctxt.setState({products: res.data});
         });
     }
 
