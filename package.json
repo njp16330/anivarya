@@ -23,6 +23,7 @@
   },
   "homepage": "https://github.com/njp16330/anivarya#readme",
   "dependencies": {
+    "@babel/polyfill": "^7.0.0",
     "axios": "^0.18.0",
     "body-parser": "^1.18.3",
     "express": "^4.16.3",
