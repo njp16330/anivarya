@@ -1,7 +1,7 @@
 var express = require('express');
 var bodyParser = require('body-parser');
 var path = require('path');
-var getProducts = require('./api/get_products');
+var getAPI = require('./api/get');
 
 var app = express();
 
@@ -13,7 +13,12 @@ app.get('/', function(req, res){
 });
 
 app.get('/api/get/products', function(req, res){
-    getProducts(function(err, data){
+    getAPI.getProducts(function(err, data){
+        res.json(data);
+    });
+});
+app.get('/api/get/productDetails', function(req, res){
+    getAPI.getProductDetails(parseInt(req.query.id), function(err, data){
         res.json(data);
     });
 });
