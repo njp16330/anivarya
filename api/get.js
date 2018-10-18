@@ -6,7 +6,7 @@ function getProducts(callback){
     if(callback) callback(null, products);
 };
 function getProductDetails(id, callback){
-    if(id > 1 || isNaN(id)) {
+    if(isNaN(id)) {
         if(callback) callback(null, null);
     }
     else{
