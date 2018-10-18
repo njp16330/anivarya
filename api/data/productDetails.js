@@ -102,7 +102,7 @@ var productDetails = {
     ],
     2: [
         {type: 'title', data: 'Internal Gear Pumps'},
-        {type: 'image', data: '/img/internalgear.gif'},
+        {type: 'image', data: '/img/internalgear_det.gif'},
         {
             type: 'paragraph',
             data: 'Fuel Pressuring internal gear Pump.'
@@ -166,7 +166,7 @@ var productDetails = {
     ],
     3: [
         {type: 'title', data: 'Helical Gear Pump'},
-        {type: 'image', data: '/img/helicalgear.gif'},
+        {type: 'image', data: '/img/helicalgear_det.gif'},
         {
             type: 'paragraph', data: 'Useful for pumping and transfer of all viscous liquids, oils and petroleum products.'
         },
@@ -218,7 +218,7 @@ var productDetails = {
     ],
     4: [
         {type: 'title', data: 'Flanged Mounted Gear Pumps'},
-        {type: 'image', data: '/img/flangedmountedgear.gif'},
+        {type: 'image', data: '/img/flangedmountedgear_det.gif'},
         {type: 'paragraph', data: 'Useful for pumping and transfer of all viscous liquids, oils and Petroleum Products.'},
         {type: 'subtitle', data: 'Technical Specification (SGX Series Pumps)'},
         {
@@ -283,7 +283,7 @@ var productDetails = {
     ],
     5: [
         {type: 'title', data: 'Stainless Steel Gear Pumps'},
-        {type: 'image', data: '/img/ssgear.gif'},
+        {type: 'image', data: '/img/ssgear_det.gif'},
         {type: 'paragraph', data: 'Stainless Steel Gear Pumps are used for transfer of Corrosive Chemicals & Viscous Liquids.'},
         {type: 'paragraph', data: 'Anivarya rotary gear pumps manufactures pumps with SS 316 construction. The pumps have SS 316 gears and shafts that are nitrided to give longer life with trouble-free performance. The shaft is supported on self lubricating type Teflon coated DU bushes and the sealing is done with Teflon based Z Pac sealant which gives zero leakage and is easy to maintain. These pumps are available in flange and foot mounting types. They can operate up to maximum pressure of 10 kg/cm? and has suction lift of 5 m at rated speed of 1440 RPM. These pumps are highly suitable for pumping and transfer of corrosive chemicals, acids, dyes, resins, pigment, printing Inks and various other liquids up to viscosity of 5000 cst and temperature of 200?C. The pumps are optionally available with built in pressure relief valve. The company also offers simple design cast iron pumps for transfer of non-corrosive liquids, fuel oils, diesel oils, etc, with built-in relief valve facility. Special pumps for OEMs can also be developed as per requirement.'},
         {type: 'subtitle', data: 'Technical Specification (SS Series Pumps)'},
@@ -342,7 +342,7 @@ var productDetails = {
     ], 
     6: [
         {type: 'title', data: 'Rotary Lobe Pumps'},
-        {type: 'image', data: '/img/rotarylobe.gif'},
+        {type: 'image', data: '/img/rotarylobe_det.gif'},
         {type: 'paragraph', data: 'Rotary lobe pump use timing gears to eliminate contact between the rotors, which allows their use on non-lubricating fluids. These pumps offer low shear and gentle handling of the liquid to minimize product degradation. Rotary lobe pumps are useful for pumping and Transfer of all high viscous liquids like syrup paints, drugs, food products, etc.'},
         {type: 'paragraph', data: 'Lobe pump is used in a variety of industries including, pulp and paper, chemical, food, beverage, pharmaceutical, and biotechnology. They are popular in these diverse industries because they offer superb sanitary qualities, high efficiency, reliability, corrosion resistance, and good clean-in-place and sterilize-in-place (CIP/SIP) characteristics.'},
         {type: 'subtitle', data: 'Technical Specification (Rotary Lobe Pumps)'},
@@ -413,7 +413,7 @@ var productDetails = {
     ],
     7: [
         {type: 'title', data: 'Pumping Systems'},
-        {type: 'image', data: '/img/pumpingsys.gif'},
+        {type: 'image', data: '/img/pumpingsys_det.gif'},
         {
             type: 'unorderedlist', data: [
                 'Useful for fuel oil loading and unloading',
