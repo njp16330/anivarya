@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../../../sass/components/widgets/Subtitle.sass';
 
 export default class Subtitle extends React.Component {
     constructor(){

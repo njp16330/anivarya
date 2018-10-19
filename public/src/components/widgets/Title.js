@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../../../sass/components/widgets/Title.sass';
 
 export default class Title extends React.Component {
     constructor(){

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from '../../../sass/components/widgets/UnorderedList.sass';
 
 export default class UnorderedList extends React.Component {
     constructor(){
