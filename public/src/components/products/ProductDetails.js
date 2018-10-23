@@ -16,10 +16,13 @@ export default class ProductDetails extends React.Component {
         this.state = {details: null};
     }
 
-    componentWillMount(){
-        axios.get('/api/get/productDetails', {params: {id: this.props.productId}}).then((res) => {
-            this.setState({details: res.data});
-        });
+    loadData(){
+        if(this.props.show && !this.state.details){
+            //alert('loading...');
+            axios.get('/api/get/productDetails', {params: {id: this.props.productId}}).then((res) => {
+                this.setState({details: res.data});
+            });
+        }
     }
 
     render(){
@@ -39,6 +42,7 @@ export default class ProductDetails extends React.Component {
             </div>);
         }
         else if(this.props.show){
+            this.loadData();
             return <div>Loading...</div>;
         }
         else return null;
