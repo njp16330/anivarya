@@ -1,0 +1,1 @@
+export var win = window;

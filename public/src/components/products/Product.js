@@ -1,15 +1,15 @@
 import React from 'react';
-import ProductDetails from './ProductDetails';
+import {win} from '../../dep';
 
 export default class Product extends React.Component {
     constructor(){
         super();
 
-        this.state = { detailsVisible: false };
+        this.state = {  };
     }
 
     onDetailsClick(e){
-        this.setState({detailsVisible: !this.state.detailsVisible});
+        win.open('/#prod-' + this.props.data.id, '_blank');
     }
 
     render(){
@@ -27,7 +27,6 @@ export default class Product extends React.Component {
                     {this.props.data.title} Details
                 </span>
             </div>
-            <ProductDetails productId={this.props.data.id} show={this.state.detailsVisible}></ProductDetails>
         </li>;
     }
 }
