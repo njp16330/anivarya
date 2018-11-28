@@ -7,7 +7,9 @@
     "test": "exit 0",
     "startserver": "node index.js",
     "build": "webpack",
-    "start": "npm run build && npm run startserver"
+    "compile": "babel public/src -d views",
+    "startold": "npm run build && npm run startserver",
+    "start": "npm run compile && npm run build && npm run startserver"
   },
   "repository": {
     "type": "git",
@@ -32,6 +34,7 @@
     "react-redux": "^5.0.7"
   },
   "devDependencies": {
+    "@babel/cli": "^7.1.2",
     "@babel/core": "^7.0.0",
     "@babel/preset-env": "^7.0.0",
     "@babel/preset-react": "^7.0.0",

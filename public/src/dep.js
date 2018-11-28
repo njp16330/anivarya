@@ -1,1 +1,1 @@
-export var win = window;
+export var win = global.window;

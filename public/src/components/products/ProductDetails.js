@@ -10,44 +10,29 @@ import Subtitle from '../widgets/Subtitle';
 
 
 export default class ProductDetails extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
-        this.state = {details: null, notFound: false};
+        this.state = {details: this.props.product, notFound: false};
     }
 
     componentDidMount(){
-        if(!this.state.details){
-            //alert('loading...');
-            axios.get('/api/get/productDetails', {params: {id: this.props.productId}}).then((res) => {
-                if(res.data)
-                    this.setState({notFound: false, details: res.data});
-                else{
-                    this.setState({notFound: true, details: null});
-                }
-            });
-        }
+        
     }
 
     render(){
-        if(!this.state.notFound && this.state.details){
-            var detailbody = (this.state.details || []).map(v => {
-                if(v.type === 'table') return <Table data={v.data}></Table>;
-                else if(v.type === 'unorderedlist') return <UnorderedList data={v.data}></UnorderedList>;
-                else if(v.type === 'orderedlist') return <OrderedList data={v.data}></OrderedList>;
-                else if(v.type === 'image') return <Image data={v.data}></Image>;
-                else if(v.type === 'title') return <Title data={v.data}></Title>;
-                else if(v.type === 'subtitle') return <Subtitle data={v.data}></Subtitle>;
-                else if(v.type === 'paragraph') return <Paragraph data={v.data}></Paragraph>;
-            });
+        var detailbody = (this.state.details || []).map(v => {
+            if(v.type === 'table') return <Table data={v.data}></Table>;
+            else if(v.type === 'unorderedlist') return <UnorderedList data={v.data}></UnorderedList>;
+            else if(v.type === 'orderedlist') return <OrderedList data={v.data}></OrderedList>;
+            else if(v.type === 'image') return <Image data={v.data}></Image>;
+            else if(v.type === 'title') return <Title data={v.data}></Title>;
+            else if(v.type === 'subtitle') return <Subtitle data={v.data}></Subtitle>;
+            else if(v.type === 'paragraph') return <Paragraph data={v.data}></Paragraph>;
+        });
 
-            return (<div>
-                {detailbody}
-            </div>);
-        }
-        else if(!this.state.notFound)
-            return <div>Loading...</div>;
-        else
-            return <Title data={'The product id is invalid.'}></Title>;
+        return (<div>
+            {detailbody}
+        </div>);
     }
 }

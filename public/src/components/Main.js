@@ -4,17 +4,17 @@ import Navigation from './Navigation';
 import Body from './Body';
 import Footer from './Footer';
 
-
-
 export default class Main extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
+
+        console.log(this.props);
     }
 
     render (){
         return (<div className="container-fluid">
             <Header></Header>
-            <Body></Body>
+            <Body products={this.props.products} productDetails={this.props.productDetails}></Body>
             <Footer></Footer>
         </div>);
     }

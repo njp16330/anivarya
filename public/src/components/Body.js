@@ -1,46 +1,19 @@
 import React from 'react';
-import axios from 'axios';
 import Products from './products/Products';
 import ProductDetails from './products/ProductDetails';
-import {win} from '../dep';
 
 export default class Body extends React.Component{
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
+
+        console.log(this.props);
         
-        this.state = {hash: null, productId: null, products: null};
-    }
-
-    componentWillMount(){
-        var ctxt = this;
-        if(!this.checkHash()){
-            axios.get('/api/get/products').then(function(res){
-                //console.log(res.data);
-                ctxt.setState({hash: null, productId: null, products: res.data});
-            });
-        }        
-    }
-    checkHash(){
-        var isHash = false;
-        if(win.location.hash){
-            if(win.location.hash.indexOf('#prod-') === 0){
-                
-                let pid = win.location.hash.split('-')[1];
-                if(!isNaN(pid)){
-                    isHash = true;
-                    this.setState({
-                        hash: isHash, productId: pid, products: null
-                    });
-                }
-            }
-        }
-
-        return isHash;
+        this.state = {hash: null, productDetails: this.props.productDetails, products: this.props.products};
     }
 
     render (){
-        if(this.state.productId){
-            return <ProductDetails productId={this.state.productId}></ProductDetails>
+        if(this.state.productDetails){
+            return <ProductDetails product={this.state.productDetails}></ProductDetails>
         }
         else{
             return (<div className="body">
@@ -51,6 +24,5 @@ export default class Body extends React.Component{
                 <Products products={this.state.products || []}></Products>
             </div>);
         }
-        
     }
 }

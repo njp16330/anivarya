@@ -8,18 +8,38 @@ var app = express();
 app.use(bodyParser.json());
 app.use(express.static(path.join(__dirname, 'public')));
 
-app.get('/', function(req, res){
-    res.render('index.html');
-});
+const ssr = require('./views/server');
+const template = require('./api/templates/main');
 
-app.get('/api/get/products', function(req, res){
+// app.get('/', function(req, res){
+//     res.render('index.html');
+// });
+// app.get('/api/get/products', function(req, res){
+//     getAPI.getProducts(function(err, data){
+//         res.json(data);
+//     });
+// });
+// app.get('/api/get/productDetails', function(req, res){
+//     getAPI.getProductDetails(parseInt(req.query.id), function(err, data){
+//         res.json(data);
+//     });
+// });
+
+app.get('/', (req, res) => {
     getAPI.getProducts(function(err, data){
-        res.json(data);
+        const content = ssr(data);
+        const response = template("Anivarya", {products: data}, content);
+        res.setHeader('Cache-Control', 'assets, max-age=604800');
+        res.send(response);
     });
 });
-app.get('/api/get/productDetails', function(req, res){
-    getAPI.getProductDetails(parseInt(req.query.id), function(err, data){
-        res.json(data);
+
+app.get('/:productid', (req, res) => {
+    getAPI.getProductDetails(req.params.productid, function(err, data){
+        const content = ssr(null, data);
+        const response = template("Anivarya", {productDetails: data}, content);
+        res.setHeader('Cache-Control', 'assets, max-age=604800');
+        res.send(response);
     });
 });
 

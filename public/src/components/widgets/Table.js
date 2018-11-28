@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../../../sass/components/widgets/Table.sass';
 
 export default class Table extends React.Component {
     constructor(){

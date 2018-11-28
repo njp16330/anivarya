@@ -1,5 +1,4 @@
 import React from 'react';
-import styles from '../../../sass/components/widgets/Paragraph.sass';
 
 export default class Paragraph extends React.Component {
     constructor(){

@@ -1,6 +1,10 @@
 import React from 'react';
-import ReactDOM from 'react-dom';
+import {hydrate} from 'react-dom';
 import Main from './components/Main';
-import styles from '../sass/Main.sass';
 
-ReactDOM.render(<Main></Main>, document.getElementById('main-container'));
+let state = window.__STATE__;
+
+//delete window.__STATE__;
+
+hydrate(<Main products={state.products} productDetails={state.productDetails}></Main>, 
+    document.getElementById('main-container'));

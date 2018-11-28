@@ -2,14 +2,10 @@ import React from 'react';
 import {win} from '../../dep';
 
 export default class Product extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
 
         this.state = {  };
-    }
-
-    onDetailsClick(e){
-        win.open('/#prod-' + this.props.data.id, '_blank');
     }
 
     render(){
@@ -23,9 +19,9 @@ export default class Product extends React.Component {
                 </div>
             </div>
             <div className="text-right">
-                <span className="details-link" onClick={this.onDetailsClick.bind(this)}>
+                <a className="details-link" href={'/' + this.props.data.id} target="_blank">
                     {this.props.data.title} Details
-                </span>
+                </a>
             </div>
         </li>;
     }
