@@ -1,8 +1,8 @@
 function template(title, initialState = {}, content = ""){
     let scripts = `<script>
 		window.__STATE__ = ${JSON.stringify(initialState)}
-	</script>
-	<script src="/bundle/bundle.js"></script>`;
+	</script>`;
+	//<script src="/bundle/bundle.js"></script>`;
     
     let page = `<!DOCTYPE html>
     	<html lang="en">

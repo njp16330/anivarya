@@ -7,9 +7,10 @@
     "test": "exit 0",
     "startserver": "node index.js",
     "build": "webpack",
+    "sassy": "node-sass public/css/app.sass public/css/app.css",
     "compile": "babel public/src -d views",
     "startold": "npm run build && npm run startserver",
-    "start": "npm run compile && npm run build && npm run startserver"
+    "start": "npm run sassy && npm run compile && npm run build && npm run startserver"
   },
   "repository": {
     "type": "git",

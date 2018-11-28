@@ -1,3 +1,4 @@
 /node_modules/*
 anivarya.code-workspace
 views/*
+public/css/app.css
