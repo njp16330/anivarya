@@ -6,7 +6,7 @@ export default class Body extends React.Component{
     constructor(props){
         super(props);
 
-        console.log(this.props);
+        //console.log(this.props);
         
         this.state = {hash: null, productDetails: this.props.productDetails, products: this.props.products};
     }
