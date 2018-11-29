@@ -25,21 +25,26 @@ const template = require('./api/templates/main');
 //     });
 // });
 
+var setResponse = function(res, data){
+    const content = ssr(data);
+    const response = template("Anivarya", data, content);
+    res.setHeader('Cache-Control', 'assets, max-age=604800');
+    res.send(response);
+}
+
 app.get('/', (req, res) => {
     getAPI.getProducts(function(err, data){
-        const content = ssr(data);
-        const response = template("Anivarya", {products: data}, content);
-        res.setHeader('Cache-Control', 'assets, max-age=604800');
-        res.send(response);
+        setResponse(res, {type: 'products', data: data});
     });
 });
-
-app.get('/:productid', (req, res) => {
+app.get('/about', (req, res) => {
+    getAPI.getAbout(function(err, data){
+        setResponse(res, {type: 'about', data: data});
+    });
+});
+app.get('/product/:productid', (req, res) => {
     getAPI.getProductDetails(req.params.productid, function(err, data){
-        const content = ssr(null, data);
-        const response = template("Anivarya", {productDetails: data}, content);
-        res.setHeader('Cache-Control', 'assets, max-age=604800');
-        res.send(response);
+        setResponse(res, {type: 'details', data: data});
     });
 });
 

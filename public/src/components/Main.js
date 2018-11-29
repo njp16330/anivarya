@@ -14,7 +14,7 @@ export default class Main extends React.Component{
     render (){
         return (<div className="container-fluid">
             <Header></Header>
-            <Body products={this.props.products} productDetails={this.props.productDetails}></Body>
+            <Body data={this.props.data} ></Body>
             <Footer></Footer>
         </div>);
     }

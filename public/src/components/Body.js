@@ -1,6 +1,8 @@
 import React from 'react';
 import Products from './products/Products';
 import ProductDetails from './products/ProductDetails';
+import Paragraph from './widgets/Paragraph';
+import Title from './widgets/Title';
 
 export default class Body extends React.Component{
     constructor(props){
@@ -8,20 +10,27 @@ export default class Body extends React.Component{
 
         //console.log(this.props);
         
-        this.state = {hash: null, productDetails: this.props.productDetails, products: this.props.products};
+        this.state = {hash: null, data: this.props.data};
     }
 
     render (){
-        if(this.state.productDetails){
-            return <ProductDetails product={this.state.productDetails}></ProductDetails>
+        if(this.state.data.type === 'details'){
+            return <ProductDetails product={this.state.data.data}></ProductDetails>;
+        }
+        else if(this.state.data.type === 'about'){
+            let txt = this.state.data.data.map(v => <Paragraph data={v}></Paragraph>);
+            return (<div className="body">
+                <Title data={"About Ani Engineers"}></Title><br />
+                {txt}
+            </div>);
         }
         else{
             return (<div className="body">
-                <b>Welcome To Ani Engineers</b><br />
+                <Title data={"Welcome To Ani Engineers"}></Title><br />
                 Anivarya Pumps is one of the leading Manufacturing firm in India for Gear Pump, Rotary Gear Pump, Helical Gear Pump, Stainless Steel, Liquid Pump, Lobe, Oil, Industrial Pumps and Pumping Systems. <br /><br />
                 Anivarya Pumps offers Heavy Duty Gear Pumps which is useful for pumping and transferring of heavy fuel oils. Generally made of iron Gear pump are also available in cast steel, stainless steel.<br /><br />
                 
-                <Products products={this.state.products || []}></Products>
+                <Products products={this.state.data.data || []}></Products>
             </div>);
         }
     }

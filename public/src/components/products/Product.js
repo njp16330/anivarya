@@ -19,7 +19,7 @@ export default class Product extends React.Component {
                 </div>
             </div>
             <div className="text-right">
-                <a className="details-link" href={'/' + this.props.data.id} target="_blank">
+                <a className="details-link" href={'/product/' + this.props.data.id} target="_blank">
                     {this.props.data.title} Details
                 </a>
             </div>
