@@ -24,6 +24,19 @@ export default class Body extends React.Component{
                 {txt}
             </div>);
         }
+        else if(this.state.data.type === 'applications'){
+            return <ProductDetails product={this.state.data.data}></ProductDetails>;
+        }
+        else if(this.state.data.type === 'downloads'){
+            let links = this.state.data.data.map(v => <div><a href={v.url} target="_blank">{v.text}</a></div>);
+            return (<div className="body">
+                <Title data={"Product Catalogs"}></Title><br />
+                {links}
+            </div>);
+        }
+        else if(this.state.data.type === 'quality'){
+            return <ProductDetails product={this.state.data.data}></ProductDetails>;
+        }
         else{
             return (<div className="body">
                 <Title data={"Welcome To Ani Engineers"}></Title><br />

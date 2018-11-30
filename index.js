@@ -42,6 +42,21 @@ app.get('/about', (req, res) => {
         setResponse(res, {type: 'about', data: data});
     });
 });
+app.get('/applications', (req, res) => {
+    getAPI.getApplications(function(err, data){
+        setResponse(res, {type: 'applications', data: data});
+    });
+});
+app.get('/downloads', (req, res) => {
+    getAPI.getDownloads(function(err, data){
+        setResponse(res, {type: 'downloads', data: data});
+    });
+});
+app.get('/quality', (req, res) => {
+    getAPI.getQuality(function(err, data){
+        setResponse(res, {type: 'quality', data: data});
+    });
+});
 app.get('/product/:productid', (req, res) => {
     getAPI.getProductDetails(req.params.productid, function(err, data){
         setResponse(res, {type: 'details', data: data});

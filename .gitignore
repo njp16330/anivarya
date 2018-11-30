@@ -2,3 +2,4 @@
 anivarya.code-workspace
 views/*
 public/css/app.css
+public/pdf/*.pdf

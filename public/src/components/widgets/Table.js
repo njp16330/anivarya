@@ -19,8 +19,8 @@ class THead extends React.Component {
     }
 
     render(){
-        var columns = this.props.columns.map(v => <div className="col">{v.title}</div>);
-        return <div className="row">{columns}</div>;
+        var columns = this.props.columns.map(v => <div className="col"><b>{v.title}</b></div>);
+        return <div className="row table-row">{columns}</div>;
     }
 }
 
@@ -31,8 +31,10 @@ class TBody extends React.Component {
 
     render(){
         var data = this.props.rows.map(v => {
-            return (<div className="row">{
-                this.props.columns.map((w, i) => <div className="col">{v[w.field]}</div>)
+            return (<div className="row table-row">{
+                this.props.columns.map((w, i) => <div className="col">{
+                    w.tick && v[w.field] ? <i className="fas fa-check"></i> : v[w.field]
+                }</div>)
             }</div>);
         });
         return <div>{data}</div>;
